@@ -87,6 +87,451 @@ body.is-cream {
     pointer-events: none;
 }
 
+.balloon-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 0;
+    z-index: 110;
+    transition: opacity 0.5s ease, transform 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: none;
+}
+
+.balloon-button.is-visible {
+    display: flex;
+    opacity: 1;
+}
+
+.balloon-button.is-fading {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.balloon-button:active {
+    transform: translate(-50%, -50%) scale(0.96);
+}
+
+.balloon-button-emoji {
+    font-size: 54px;
+    display: inline-block;
+}
+
+.balloon-button-text {
+    color: #111111;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.cake-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    z-index: 112;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+.cake-button.is-visible {
+    display: flex;
+    opacity: 1;
+}
+
+.cake-button.is-fading {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cake-button:active {
+    transform: translate(-50%, -50%) scale(0.96);
+}
+
+.cake-button-emoji {
+    font-size: 56px;
+    display: inline-block;
+}
+
+.cake-button-text {
+    color: #111111;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.balloon-stage {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    display: none;
+    z-index: 25;
+}
+
+.balloon-stage.is-visible {
+    display: block;
+}
+
+.cake-stage {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 35;
+    pointer-events: none;
+}
+
+.cake-stage.is-visible {
+    display: flex;
+}
+
+.cake-scene {
+    position: relative;
+    width: min(360px, 92vw);
+    height: min(560px, 86vh);
+}
+
+.cake-stage #cake {
+    display: block;
+    position: relative;
+    width: min(220px, 62vw);
+    height: auto;
+    margin: -10em auto 0;
+}
+
+.cake-stage .velas {
+    background: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    width: clamp(3px, 1.5vw, 5px);
+    height: clamp(20px, 7vh, 35px);
+    margin-left: calc(-1 * clamp(1.5px, 0.75vw, 2.4px));
+    margin-top: calc(-1 * clamp(5px, 1.5vh, 8.33px));
+    transform: translateY(-300px);
+    backface-visibility: hidden;
+    animation: cake-in 500ms 6s ease-out forwards;
+}
+
+.cake-stage .velas::after,
+.cake-stage .velas::before {
+    background: rgba(255, 0, 0, 0.4);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2.22222222px;
+}
+
+.cake-stage .velas::after {
+    top: 25%;
+    left: 0;
+}
+
+.cake-stage .velas::before {
+    top: 45%;
+    left: 0;
+}
+
+.cake-stage .fuego {
+    border-radius: 100%;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -2.6px;
+    width: 6.66666667px;
+    height: 18px;
+}
+
+.cake-stage .fuego:nth-child(1) {
+    animation: cake-fuego 2s 6.5s infinite;
+}
+
+.cake-stage .fuego:nth-child(2) {
+    animation: cake-fuego 1.5s 6.5s infinite;
+}
+
+.cake-stage .fuego:nth-child(3) {
+    animation: cake-fuego 1s 6.5s infinite;
+}
+
+.cake-stage .fuego:nth-child(4) {
+    animation: cake-fuego 0.5s 6.5s infinite;
+}
+
+.cake-stage .fuego:nth-child(5) {
+    animation: cake-fuego 0.2s 6.5s infinite;
+}
+
+
+
+@keyframes cake-fuego {
+    0%,
+    100% {
+        background: rgba(254, 248, 97, 0.5);
+        box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        background: rgba(255, 50, 0, 0.1);
+        box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+        transform: translateY(-20px) scale(0);
+    }
+}
+
+@keyframes cake-in {
+    to {
+        transform: translateY(0);
+    }
+}
+
+.particles-container {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.fireworks-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 19;
+    pointer-events: none;
+    display: none;
+}
+
+.fireworks-canvas.active {
+    display: block;
+}
+
+.particle {
+    position: absolute;
+    width: clamp(3px, 0.7vw, 8px);
+    height: clamp(3px, 0.7vw, 8px);
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--particle-color) 0%, var(--particle-color) 70%, transparent 100%);
+    box-shadow: 0 0 clamp(6px, 1.5vw, 14px) var(--particle-color), 0 0 clamp(12px, 2vw, 20px) var(--particle-glow);
+    opacity: 0;
+    animation: particle-float linear forwards;
+}
+
+@keyframes particle-float {
+    0% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(var(--ty)) translateX(var(--tx)) scale(0.1);
+    }
+}
+
+.book-click-hint {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Amatic SC', cursive;
+    font-size: clamp(16px, 5vw, 28px);
+    color: #ffffff;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.book-stage.is-visible .book-click-hint {
+    opacity: 1;
+}
+
+.book-stage {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 26px 14px;
+    z-index: 40;
+    opacity: 0;
+    pointer-events: none;
+    background: transparent;
+    transition: opacity 0.65s ease;
+}
+
+.book-stage.is-visible {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.book-stage-inner {
+    width: min(1020px, 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.book-stage .card {
+    color: #013243;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #e0e1dc;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5), 20px 0 60px rgba(0, 0, 0, 0.5);
+    transition: transform 1s ease, box-shadow 1s ease;
+}
+
+.book-stage .card:hover {
+    transform: perspective(2000px) rotate(15deg) scale(1.2);
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5), 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.book-stage .card::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #bac1ba;
+    transform-origin: bottom;
+    transform: skewX(-45deg);
+}
+
+.book-stage .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 5px;
+    height: 100%;
+    background: #92a29c;
+    transform-origin: left;
+    transform: skewY(-45deg);
+}
+
+.book-stage .card .imgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    transition: transform 0.7s ease;
+    z-index: 1;
+}
+
+.book-stage .card .bark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e0e1dc;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
+.book-stage .card .imgBox img {
+    width: 100%;
+    height: 100%;
+    min-width: 250px;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.book-stage .card:hover .imgBox {
+    transform: rotateY(-135deg);
+}
+
+.book-stage .card:hover .bark {
+    opacity: 1;
+    box-shadow: 300px 200px 100px rgba(0, 0, 0, 0.4) inset;
+}
+
+.book-stage .card .details {
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    padding: 0 0 0 10px;
+    z-index: -1;
+    margin-top: 70px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.book-stage .card .details h4 {
+    margin: 0;
+    text-align: center;
+    font-size: 26px;
+    line-height: 1;
+    font-family: 'Amatic SC', cursive;
+}
+
+.book-stage .card .details p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.15;
+    transform: rotate(-10deg);
+    padding: 0 0 0 20px;
+}
+
+.book-stage .card .details .color1 {
+    color: #1bbc9b;
+}
+
+.book-stage .card .details .color2 {
+    color: #c0392b;
+}
+
+.book-stage .card .details .margin {
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.book-stage .card .details .text-right {
+    text-align: right;
+    padding-right: 18px;
+}
+
+.moving-balloon {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    will-change: transform;
+    user-select: none;
+    pointer-events: none;
+}
+
 .bulb-button:active {
     transform: translate(-50%, -50%) scale(0.95);
 }
@@ -98,7 +543,7 @@ body.is-cream {
 }
 
 .bulb-text {
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     font-weight: bold;
     font-family: Arial, sans-serif;
@@ -107,7 +552,14 @@ body.is-cream {
 }
 
 body.is-cream .bulb-text {
-    color: #4f463a;
+    color: #111111;
+}
+
+body.is-cream .phrase-layer,
+body.is-cream .timer-title,
+body.is-cream .timer-line,
+body.is-cream .digit {
+    color: #111111;
 }
 
 .flower-button:active {
@@ -220,8 +672,52 @@ body.is-cream .bulb-text {
         font-size: 15px;
     }
 
+    .balloon-button-emoji {
+        font-size: 42px;
+    }
+
+    .balloon-button-text {
+        font-size: 14px;
+    }
+
+    .cake-button-emoji {
+        font-size: 44px;
+    }
+
+    .cake-button-text {
+        font-size: 14px;
+    }
+
+
+
     .digit {
         min-width: 0;
         padding: 0;
+    }
+
+    .book-stage {
+        padding: 18px 8px;
+    }
+
+    .book-stage-inner {
+        gap: 14px;
+    }
+
+    .book-stage .card {
+        width: min(300px, 92vw);
+        height: min(400px, 75vh);
+    }
+
+    .book-stage .card .details {
+        margin-top: 56px;
+    }
+
+    .book-stage .card .details h4 {
+        font-size: 22px;
+    }
+
+    .book-stage .card .details p {
+        font-size: 13px;
+        line-height: 1.05;
     }
 }
