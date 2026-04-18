@@ -1,0 +1,21 @@
+{
+  "name": "nataszka",
+  "version": "1.0.0",
+  "description": "A beautiful birthday card for Nataszka",
+  "homepage": "https://github.com/mikitavydrankou/nataszka#readme",
+  "bugs": {
+    "url": "https://github.com/mikitavydrankou/nataszka/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikitavydrankou/nataszka.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "start": "open index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
