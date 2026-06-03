@@ -1,7 +1,23 @@
 {
   "name": "nataszka",
   "version": "1.0.0",
-  "description": "A beautiful birthday card for Nataszka",
+  "description": "Minimal interactive birthday card — animated greeting, age counter, balloons and cake in plain HTML, CSS and JavaScript. No build step.",
+  "keywords": [
+    "birthday",
+    "birthday-card",
+    "happy-birthday",
+    "greeting-card",
+    "interactive",
+    "animation",
+    "confetti",
+    "fireworks",
+    "html",
+    "css",
+    "javascript",
+    "vanilla-js",
+    "no-build",
+    "single-page"
+  ],
   "homepage": "https://github.com/mikitavydrankou/nataszka#readme",
   "bugs": {
     "url": "https://github.com/mikitavydrankou/nataszka/issues"

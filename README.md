@@ -1,39 +1,74 @@
-# nataszka
+<div align="center">
 
-A Beautiful Birthday Card for Nataszka
+# 🎂 Interactive Birthday Card
 
-## Features
+### A tiny web page to wish someone you love a happy birthday
 
-- 🎉 Animated birthday greeting
-- 🎈 Interactive balloons
-- ✨ Confetti effect
-- 📱 Responsive design
-- 🎨 Gradient background
+Click a flower, dim the lights, release the balloons, light the cake, open the letter.
+A short animated sequence in plain HTML, CSS and JavaScript — no build step, no dependencies, no tracking.
+
+![HTML5](https://img.shields.io/badge/HTML5-e34f26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572b6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-f7df1e?logo=javascript&logoColor=black)
+![Build](https://img.shields.io/badge/build-none-brightgreen)
+
+</div>
+
+---
+
+## Run
+
+No server, no install. Just open the page.
+
+```bash
+start index.html   # Windows
+open index.html    # macOS
+```
+
+Best viewed on a phone — the layout and gestures are tuned for mobile.
+
+## What happens
+
+- 🌸 **Flower** — starts the greeting, a few lines fade in one after another.
+- ⏳ **Age counter** — shows how long the birthday person has been alive, down to the second.
+- 💡 **Light bulb** — dims and lights the screen for the reveal.
+- 🎈 **Balloons** — a burst of floating balloons.
+- 🎂 **Cake** — an animated cake with candles.
+- 💌 **Letter** — a closing personal message.
+- ✨ Fireworks and confetti throughout.
+
+## Make it yours
+
+Everything personal lives in two files — no framework knowledge needed.
+
+| Change            | Location                                       |
+| ----------------- | ---------------------------------------------- |
+| Name              | `index.html` — page title and letter           |
+| Greeting lines    | `js/index.js` — `phrases` array                |
+| Birthdate         | `js/index.js` — `timerStartDate` (age counter) |
+| Closing letter    | `index.html` — `.details` block                |
+| Colors            | `css/style.css`                                |
+| Balloon images    | `assets/balloons/`                             |
+
+> [!TIP]
+> Default text is Polish — swap the `phrases` array and the letter for any language you like.
 
 ## Structure
 
 ```
-nataszka/
-├── index.html       # Main HTML file
-├── css/
-│   └── style.css    # Styles
-├── js/
-│   └── index.js     # JavaScript logic
-└── README.md        # This file
+.
+├── index.html        # page + the letter
+├── css/style.css     # styles, gradients, animations
+├── js/index.js       # the interactive sequence
+└── assets/           # balloon & decoration images
 ```
-
-## How to Use
-
-1. Open `index.html` in your browser
-2. Click on the balloons for animation effects
-3. Customize the message and colors as needed
-
-## Customization
-
-- Edit the name in `index.html`
-- Change colors in `css/style.css`
-- Add more interactive features in `js/index.js`
 
 ---
 
-Made with 💖
+<div align="center">
+
+<sub>fork it, change the name, make someone smile.</sub>
+
+<sub>birthday card · happy birthday · interactive greeting card · animated web card · HTML CSS JavaScript</sub>
+
+</div>
